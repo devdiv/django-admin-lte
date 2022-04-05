@@ -1,0 +1,94 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {% block head %}
+    {% block meta %}
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no'
+      name='viewport' />
+    {% endblock meta %}
+
+  <title>
+    AdminLTE 3 | {% block title %}{% endblock %}
+  </title>
+  {% block stylesheets %}
+    {% include 'includes/stylesheets.html' %}
+  {% endblock stylesheets %}
+
+  {% endblock head %}
+</head>
+
+<body class="hold-transition {% block body_class %}{% endblock body_class %}">
+  {% block body %}
+  <div class="wrapper ">
+
+    <!-- Preloader -->
+    {% block preloader %}
+      {% include 'includes/preloader.html' %}
+    {% endblock preloader %}
+    
+    <!-- Navbar -->
+    <nav class="main-header navbar {% block nav_class %}{% endblock nav_class %}">
+      {% block navbar %}
+        {% include 'includes/left-navbar.html' %}
+        {% include 'includes/right-navbar.html' %}
+      {% endblock navbar %}
+    </nav>
+
+    <!-- Main Sidebar Container -->
+    {% block sidebar %}
+      <aside class="main-sidebar sidebar-dark-primary elevation-4 {% block sidebar_class %} {% endblock sidebar_class %}">
+        {% block sidebar_brand %}  
+          {% include 'includes/brand.html' %}
+        {% endblock sidebar_brand %} 
+
+        <!-- Sidebar -->
+        {% include 'includes/sidebar.html' %}
+      </aside>   
+    {% endblock sidebar %}
+
+    <div class="content-wrapper">
+      <!-- Content Header (Page header) -->
+      {% block content_header %}
+        <section class="content-header">      
+          <div class="container-fluid">
+              <div class="row mb-2">
+                  <div class="col-sm-6">
+                      <h1 class="m-0">
+                          {% block page_name %}{% endblock %}               
+                      </h1>
+                  </div><!-- /.col -->
+                  {% block breadcrumbs %}
+                  {% endblock breadcrumbs %}
+              </div><!-- /.row -->
+          </div><!-- /.container-fluid -->
+        </section>
+      {% endblock content_header %}
+
+      {% block content %}
+      {% endblock content %}
+    </div>
+
+    {% block footer %}
+      <footer class="main-footer">
+        {% include 'includes/footer.html' %}
+      </footer>
+    {% endblock footer %}
+
+    <!-- Control Sidebar -->
+    {% block control_sidebar %}
+      {% include 'includes/control-sidebar.html' %}
+    {% endblock control_sidebar %}
+  </div>
+
+  {% block javascripts %}
+    {% include 'includes/javascripts.html' %}
+  {% endblock javascripts %}
+
+  <!-- Custom Theme Scripts -->
+
+  {% endblock body %}
+</body>
+</html>
