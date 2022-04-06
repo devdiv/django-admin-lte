@@ -19,6 +19,7 @@
   </div><!-- /.col -->
 {% endblock breadcrumbs %}
 
+<!-- Main content -->
 {% block content %}
 <section class="content">
   <div class="container-fluid">
@@ -602,11 +603,14 @@
     <!-- /.row (main row) -->
   </div><!-- /.container-fluid -->
 </section>
+    <!-- /.content -->
 {% endblock content %}
+ <!-- /.content-wrapper -->
 
 <!-- Specific Page JS goes HERE  -->
 {% block javascripts %}
   {{ block.super}}
+  <script src="/static/assets/dist/js/pages/dashboard.js"></script>
   <script>
     $(document).ready(function () {
     });
